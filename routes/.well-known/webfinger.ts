@@ -11,7 +11,7 @@ export const handler = define.handlers({
     }
 
     const webfingerData = {
-      subject: "acct:@bukhalo.com",
+      subject: "acct:a@bukhalo.com",
       links: [
         {
           "rel": "http://openid.net/specs/connect/1.0/issuer",
