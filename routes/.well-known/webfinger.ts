@@ -2,19 +2,27 @@ import { define } from "@/utils.ts";
 
 export const handler = define.handlers({
   GET(ctx) {
+    const url = new URL(ctx.req.url);
+    const resource = url.searchParams.get("resource");
+
+    // Basic validation to ensure the resource exists
+    if (!resource) {
+      return new Response("Missing resource", { status: 400 });
+    }
+
     const webfingerData = {
       subject: "acct:a@bukhalo.com",
       links: [
         {
           "rel": "http://openid.net/specs/connect/1.0/issuer",
-          "href": "https://id.bukhalo.com/.well-known/openid-configuration",
+          "href": "https://id.bukhalo.com",
         },
       ],
     };
 
     return new Response(JSON.stringify(webfingerData), {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/jrd+json",
       },
     });
   },
