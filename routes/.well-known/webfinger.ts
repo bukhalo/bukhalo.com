@@ -11,11 +11,11 @@ export const handler = define.handlers({
     }
 
     const webfingerData = {
-      subject: "a@bukhalo.com",
+      subject: "acct:@bukhalo.com",
       links: [
         {
           "rel": "http://openid.net/specs/connect/1.0/issuer",
-          "href": "https://sso.bukhalo.com/.well-known/openid-configuration",
+          "href": "https://id.bukhalo.com/.well-known/openid-configuration",
         },
       ],
     };
