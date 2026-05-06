@@ -21,9 +21,9 @@ export const handler = define.handlers({
     };
 
     return new Response(JSON.stringify(webfingerData), {
-      headers: {
-        "Content-Type": "application/jrd+json",
-      },
+      // headers: {
+      //   "Content-Type": "application/jrd+json",
+      // },
     });
   },
 });
